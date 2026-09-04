@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buletin ASSEM Annual 2024</title>
+  <link rel="icon" href="images/Logo-Assem.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Loading -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo">ASSEM</div>
+    <div class="spinner"></div>
+    <div class="loading-text">Memuat Buletin ASSEM Annual 2024...</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-brand">
+      <div class="header-logo"><img src="images/Logo-Assem.png" alt="Logo ASSEM"></div>
+      <div class="header-title">
+        <h1>Buletin ASSEM</h1>
+        <p>UKM Amikom Seneng Seni &amp; Musik · Annual 2024</p>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="header-menu" id="headerMenu">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        ☰ Menu <span class="chevron">▾</span>
+      </button>
+      <div class="dropdown" id="dropdown">
+        <a href="../home.html" class="dropdown-item">
+          <span class="di-icon">🏠</span>
+          <span class="di-label">Beranda</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" onclick="toggleView(); closeMenu()">
+          <span class="di-icon" id="viewIcon">📄</span>
+          <span class="di-label" id="viewLabel">1 Halaman</span>
+        </button>
+        <button class="dropdown-item" onclick="toggleThumbs(); closeMenu()">
+          <span class="di-icon">🗂️</span>
+          <span class="di-label">Panel Halaman</span>
+        </button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" onclick="toggleFullscreen(); closeMenu()">
+          <span class="di-icon">⛶</span>
+          <span class="di-label">Layar Penuh</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stage -->
+  <div class="stage">
+    <div class="book-wrapper">
+      <button class="nav-arrow prev" id="prevBtn" onclick="prevPage()">&#8249;</button>
+      <div class="book-container" id="bookContainer"></div>
+      <button class="nav-arrow next" id="nextBtn" onclick="nextPage()">&#8250;</button>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="prevPage()">◀</button>
+      <div class="page-info" id="pageInfo">Hal <span>1</span> / <span>30</span></div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <button class="ctrl-btn" onclick="nextPage()">▶</button>
+    </div>
+
+    <div class="thumb-strip" id="thumbStrip"></div>
+  </div>
+
+  <!-- Fullscreen -->
+  <div class="fullscreen-overlay" id="fullscreenOverlay">
+    <button class="fullscreen-close" onclick="closeFullscreen()">✕</button>
+    <img id="fullscreenImg" src="" alt="Halaman" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
